@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API测试</title>
+</head>
+<body>
+
+    
+
+    <script type="module">
+        console.log("start.. ");
+        debugger
+        import { Octokit } from "./octokit-rest.js";
+        const octokit = new Octokit({
+            auth: "b33ba7e9b09237b81b00274b79432303048a61c4"
+        });
+
+        octokit.gists.list().then(({data}) => {
+            debugger
+            console.log(data);
+        });
+
+        octokit.gists.get({
+            gist_id: "c67308f34535023fb852e5ee231520fc"
+        }).then(({data}) => {
+            debugger
+            console.log(data);
+        });
+
+        // octokit.gists.create({
+        //     files: {
+        //         "README.TXT": {
+        //             "content": '111222'
+        //         }
+        //     }
+        // }).then(({data}) => {
+        //     debugger
+        //     console.log(data);
+        // });
+
+      </script>
+    
+</body>
+</html>
